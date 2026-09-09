@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Map - Vyntrax Prep</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/study-map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-book"></i>
+                    <span>Vyntrax Prep</span>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <button class="settings-btn" onclick="toggleSettings()"><i class="fas fa-cog"></i> Settings</button>
+                <button class="back-btn" onclick="window.location.href='../index.html'"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-content">
+            <h3>Settings</h3>
+            <div class="theme-toggle">
+                <label>
+                    <i class="fas fa-moon"></i> Dark Mode
+                    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <button class="close-settings" onclick="toggleSettings()">Close</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="study-hero">
+            <h1><i class="fas fa-map"></i> Personalized Study Map</h1>
+            <p>Clear your concept-wise backlogs with structured learning sequence</p>
+        </section>
+
+        <div class="study-content">
+            <div class="study-filter">
+                <h3>Filter by Subject</h3>
+                <button class="filter-btn active" onclick="filterSubject('all')">All Subjects</button>
+                <button class="filter-btn" onclick="filterSubject('math')"><i class="fas fa-calculator"></i> Math</button>
+                <button class="filter-btn" onclick="filterSubject('physics')"><i class="fas fa-atom"></i> Physics</button>
+                <button class="filter-btn" onclick="filterSubject('chemistry')"><i class="fas fa-flask"></i> Chemistry</button>
+            </div>
+
+            <div class="timeline-container">
+                <h2>Complete JEE Preparation Timeline</h2>
+                <p class="timeline-description">Follow this structured sequence to master all concepts</p>
+
+                <!-- Mathematics Timeline -->
+                <div class="subject-timeline" id="math-timeline">
+                    <h3 class="timeline-subject">Mathematics</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #6366f1;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Sets, Relations & Functions (Week 1)</h4>
+                                <p><strong>Concepts:</strong> Set operations, relations, function types, composition</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Foundational</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Sets')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #ec4899;">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Quadratic Equations (Week 2)</h4>
+                                <p><strong>Concepts:</strong> Solutions, discriminant, nature of roots, applications</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Important</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Quadratic')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #10b981;">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Sequences & Series (Week 3)</h4>
+                                <p><strong>Concepts:</strong> AP, GP, sum formulas, convergence</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Intermediate</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Sequences')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #f59e0b;">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Limits, Continuity & Derivatives (Weeks 4-5)</h4>
+                                <p><strong>Concepts:</strong> Limit theorems, continuity, differentiation rules, applications</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">High Priority</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Calculus')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #06b6d4;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Integration & Applications (Weeks 6-7)</h4>
+                                <p><strong>Concepts:</strong> Integration methods, definite integrals, area under curves</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Critical</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Integration')">Clear Backlog</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physics Timeline -->
+                <div class="subject-timeline" id="physics-timeline">
+                    <h3 class="timeline-subject">Physics</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #8b5cf6;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Kinematics (Week 1)</h4>
+                                <p><strong>Concepts:</strong> Motion equations, relative motion, projectile motion</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Foundational</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Kinematics')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #ec4899;">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Newton's Laws & Friction (Week 2)</h4>
+                                <p><strong>Concepts:</strong> Force, mass, acceleration, types of friction</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Important</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Newton')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #10b981;">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Work, Energy & Power (Week 3)</h4>
+                                <p><strong>Concepts:</strong> Work-energy theorem, conservation of energy, power</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Intermediate</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('WorkEnergy')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #f59e0b;">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Electricity & Magnetism (Weeks 4-6)</h4>
+                                <p><strong>Concepts:</strong> Coulomb's law, circuits, magnetic fields, EMI</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">High Priority</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('EMag')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #06b6d4;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Modern Physics & Optics (Weeks 7-8)</h4>
+                                <p><strong>Concepts:</strong> Wave optics, ray optics, quantum effects</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Critical</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('ModernPhysics')">Clear Backlog</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chemistry Timeline -->
+                <div class="subject-timeline" id="chemistry-timeline">
+                    <h3 class="timeline-subject">Chemistry</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #06b6d4;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Atomic Structure (Week 1)</h4>
+                                <p><strong>Concepts:</strong> Bohr model, quantum numbers, orbital theory</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Foundational</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('AtomicStruct')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #ec4899;">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Chemical Bonding (Week 2)</h4>
+                                <p><strong>Concepts:</strong> Ionic/covalent/coordinate bonding, molecular structure</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Important</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('ChemBond')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #10b981;">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Thermodynamics (Week 3)</h4>
+                                <p><strong>Concepts:</strong> Entropy, enthalpy, Gibbs energy, equilibrium</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Intermediate</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('Thermodynamics')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #f59e0b;">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Organic Chemistry Basics (Weeks 4-5)</h4>
+                                <p><strong>Concepts:</strong> Hybridization, reactions, mechanisms, nomenclature</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">High Priority</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('OrgBasics')">Clear Backlog</button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker" style="background: #06b6d4;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Functional Groups & Inorganic (Weeks 6-7)</h4>
+                                <p><strong>Concepts:</strong> Alcohols, aldehydes, periodic trends, d-block</p>
+                                <div class="backlog-status">
+                                    <span class="status-badge">Critical</span>
+                                </div>
+                                <button class="btn btn-sm" onclick="startBacklogClear('FunctionalInorg')">Clear Backlog</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Vyntrax Prep</h4>
+                <p>Your complete JEE exam preparation partner.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="https://www.instagram.com/vyntrax.india" target="_blank"><i class="fab fa-instagram"></i> @vyntrax.india</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/study-map.js"></script>
+</body>
+</html>
