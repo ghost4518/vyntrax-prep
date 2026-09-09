@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Tests - Vyntrax Prep</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/mock-test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-book"></i>
+                    <span>Vyntrax Prep</span>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <button class="settings-btn" onclick="toggleSettings()"><i class="fas fa-cog"></i> Settings</button>
+                <button class="back-btn" onclick="window.location.href='../index.html'"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-content">
+            <h3>Settings</h3>
+            <div class="theme-toggle">
+                <label>
+                    <i class="fas fa-moon"></i> Dark Mode
+                    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <button class="close-settings" onclick="toggleSettings()">Close</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="mock-hero">
+            <h1><i class="fas fa-edit"></i> Mock Tests</h1>
+            <p>Full Length JEE Mock Tests with Detailed Solutions</p>
+        </section>
+
+        <div class="mock-content" id="mockContent">
+            <div class="test-selection">
+                <h2>Select a Test</h2>
+                <div class="tests-grid">
+                    <div class="test-card" onclick="startTest('Full_Mock_1')">
+                        <div class="test-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3>Full Mock Test 1</h3>
+                        <p>Complete JEE Main Pattern</p>
+                        <span class="test-info">90 Questions | 3 Hours</span>
+                        <button class="btn btn-primary">Start Test</button>
+                    </div>
+
+                    <div class="test-card" onclick="startTest('Full_Mock_2')">
+                        <div class="test-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3>Full Mock Test 2</h3>
+                        <p>Complete JEE Main Pattern</p>
+                        <span class="test-info">90 Questions | 3 Hours</span>
+                        <button class="btn btn-primary">Start Test</button>
+                    </div>
+
+                    <div class="test-card" onclick="startTest('Math_Chapter_1')">
+                        <div class="test-icon"><i class="fas fa-calculator"></i></div>
+                        <h3>Mathematics Chapter Test</h3>
+                        <p>Algebra & Calculus</p>
+                        <span class="test-info">30 Questions | 1 Hour</span>
+                        <button class="btn btn-primary">Start Test</button>
+                    </div>
+
+                    <div class="test-card" onclick="startTest('Physics_Chapter_1')">
+                        <div class="test-icon"><i class="fas fa-atom"></i></div>
+                        <h3>Physics Chapter Test</h3>
+                        <p>Mechanics & Waves</p>
+                        <span class="test-info">30 Questions | 1 Hour</span>
+                        <button class="btn btn-primary">Start Test</button>
+                    </div>
+
+                    <div class="test-card" onclick="startTest('Chemistry_Chapter_1')">
+                        <div class="test-icon"><i class="fas fa-flask"></i></div>
+                        <h3>Chemistry Chapter Test</h3>
+                        <p>Physical & Organic</p>
+                        <span class="test-info">30 Questions | 1 Hour</span>
+                        <button class="btn btn-primary">Start Test</button>
+                    </div>
+
+                    <div class="test-card" onclick="startTest('Concept_Test_1')">
+                        <div class="test-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Concept Wise Test</h3>
+                        <p>Focus on Fundamentals</p>
+                        <span class="test-info">20 Questions | 30 Minutes</span>
+                        <button class="btn btn-primary">Start Test</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-interface" id="testInterface" style="display: none;">
+            <div class="test-header">
+                <h2 id="testTitle"></h2>
+                <div class="timer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer">03:00:00</span>
+                </div>
+            </div>
+
+            <div class="test-body">
+                <div class="questions-panel">
+                    <div class="question-display" id="questionDisplay"></div>
+                </div>
+
+                <div class="options-panel">
+                    <div id="optionsContainer"></div>
+                    <div class="navigation-buttons">
+                        <button class="btn btn-info" onclick="previousQuestion()">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button class="btn btn-info" onclick="nextQuestion()">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-warning" onclick="submitTest()">
+                            <i class="fas fa-check"></i> Submit Test
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <div class="results-card">
+                <h2>Test Results</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                </div>
+                <div class="results-stats">
+                    <div class="stat">
+                        <h4>Correct Answers</h4>
+                        <p id="correctCount">0</p>
+                    </div>
+                    <div class="stat">
+                        <h4>Wrong Answers</h4>
+                        <p id="wrongCount">0</p>
+                    </div>
+                    <div class="stat">
+                        <h4>Skipped</h4>
+                        <p id="skippedCount">0</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="viewSolutions()">View Solutions</button>
+                <button class="btn btn-secondary" onclick="retakeTest()">Retake Test</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Vyntrax Prep</h4>
+                <p>Your complete JEE exam preparation partner.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="https://www.instagram.com/vyntrax.india" target="_blank"><i class="fab fa-instagram"></i> @vyntrax.india</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/mock-test.js"></script>
+</body>
+</html>

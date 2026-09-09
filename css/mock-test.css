@@ -1,0 +1,256 @@
+.mock-hero {
+    background: linear-gradient(135deg, #10b981, #3b82f6);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.mock-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.mock-content {
+    padding: 2rem;
+}
+
+.test-selection h2 {
+    color: #6366f1;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.test-card {
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: var(--shadow);
+}
+
+.test-card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+.test-icon {
+    font-size: 3rem;
+    color: #6366f1;
+    margin-bottom: 1rem;
+}
+
+.test-card h3 {
+    color: #6366f1;
+    margin-bottom: 0.5rem;
+}
+
+.test-card p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+
+.test-info {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #6366f1;
+    font-weight: bold;
+}
+
+.test-interface {
+    padding: 2rem;
+}
+
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.test-header h2 {
+    margin: 0;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.test-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.questions-panel, .options-panel {
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.question-display {
+    margin-bottom: 1.5rem;
+}
+
+.question-display h4 {
+    color: #6366f1;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.option {
+    background: rgba(99, 102, 241, 0.05);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option:hover {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.15);
+}
+
+.option.selected {
+    background: rgba(99, 102, 241, 0.3);
+    border-color: #6366f1;
+}
+
+.option input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.navigation-buttons .btn {
+    flex: 1;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+.btn-warning {
+    background: #f59e0b;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #d97706;
+}
+
+.results-section {
+    padding: 2rem;
+}
+
+.results-card {
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.results-card h2 {
+    color: #6366f1;
+    margin-bottom: 2rem;
+}
+
+.score-display {
+    margin-bottom: 2rem;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+}
+
+.results-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    padding: 1.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 8px;
+}
+
+.stat h4 {
+    color: #6366f1;
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6366f1;
+}
+
+.results-card .btn {
+    margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .test-body {
+        grid-template-columns: 1fr;
+    }
+
+    .test-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .results-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+}
