@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics - Vyntrax Prep</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/subjects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-book"></i>
+                    <span>Vyntrax Prep</span>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <button class="settings-btn" onclick="toggleSettings()"><i class="fas fa-cog"></i> Settings</button>
+                <button class="back-btn" onclick="window.location.href='../index.html'"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-content">
+            <h3>Settings</h3>
+            <div class="theme-toggle">
+                <label>
+                    <i class="fas fa-moon"></i> Dark Mode
+                    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <button class="close-settings" onclick="toggleSettings()">Close</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="subject-hero">
+            <h1><i class="fas fa-calculator"></i> Mathematics</h1>
+            <p>Complete guide to JEE Mathematics with chapters, concepts, and practice questions</p>
+        </section>
+
+        <div class="subject-content">
+            <div class="chapters-list">
+                <h2>Chapters & Concepts</h2>
+                
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Sets, Relations and Functions</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Sets and Subsets</h4>
+                            <p><strong>Theory:</strong> A set is a well-defined collection of objects. Understanding sets, subsets, unions, intersections, and complements is fundamental.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Sets')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Relations and Functions</h4>
+                            <p><strong>Theory:</strong> Relations and functions define relationships between elements of sets. Master domain, range, and types of functions.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Relations')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Function Composition</h4>
+                            <p><strong>Theory:</strong> Combining functions to create new functions. Important for higher-level mathematics.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('FunctionComposition')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Algebra</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Quadratic Equations</h4>
+                            <p><strong>Theory:</strong> Equations of the form ax²+bx+c=0. Learn solutions using discriminant, nature of roots, and applications.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Quadratic')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Sequences and Series</h4>
+                            <p><strong>Theory:</strong> Arithmetic and Geometric Progressions. Sum formulas and applications in JEE problems.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Sequences')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Complex Numbers</h4>
+                            <p><strong>Theory:</strong> Imaginary unit, complex conjugate, operations, and De Moivre's theorem.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('ComplexNumbers')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Calculus</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Limits and Continuity</h4>
+                            <p><strong>Theory:</strong> Foundation of calculus. Limits, continuity, and differentiability of functions.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Limits')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Differentiation</h4>
+                            <p><strong>Theory:</strong> Derivatives, rules of differentiation, chain rule, and applications.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Differentiation')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Integration</h4>
+                            <p><strong>Theory:</strong> Antiderivatives, indefinite and definite integrals, methods of integration.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Integration')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Geometry (Coordinate & 3D)</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Straight Lines</h4>
+                            <p><strong>Theory:</strong> Equations of lines, angle between lines, distance formulas.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Lines')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Circles and Conic Sections</h4>
+                            <p><strong>Theory:</strong> Circles, ellipse, hyperbola, parabola - equations and properties.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Conics')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>3D Geometry</h4>
+                            <p><strong>Theory:</strong> Points, lines, planes in 3D space, distances, and angles.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('3D')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Trigonometry</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Trigonometric Functions</h4>
+                            <p><strong>Theory:</strong> Sine, cosine, tangent and other trigonometric ratios, periodicity.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('TrigFunctions')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Trigonometric Equations</h4>
+                            <p><strong>Theory:</strong> Solving equations involving trigonometric functions.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('TrigEquations')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Inverse Trigonometric Functions</h4>
+                            <p><strong>Theory:</strong> Inverse functions, their domains, ranges, and properties.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('InverseTrig')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Vectors and Matrices</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Vectors</h4>
+                            <p><strong>Theory:</strong> Vector operations, dot product, cross product, and applications.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Vectors')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Matrices and Determinants</h4>
+                            <p><strong>Theory:</strong> Matrix operations, determinants, inverse, and solving linear equations.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Matrices')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Probability and Statistics</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Probability</h4>
+                            <p><strong>Theory:</strong> Basic probability, conditional probability, Bayes' theorem, and distributions.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Probability')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Statistics</h4>
+                            <p><strong>Theory:</strong> Mean, median, mode, standard deviation, correlation, and regression.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Statistics')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Vyntrax Prep</h4>
+                <p>Your complete JEE exam preparation partner.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="https://www.instagram.com/vyntrax.india" target="_blank"><i class="fab fa-instagram"></i> @vyntrax.india</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/subjects.js"></script>
+</body>
+</html>
