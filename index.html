@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyntrax Prep - JEE Exam Preparation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="navbar-left">
+                    <div class="logo">
+                        <i class="fas fa-book"></i>
+                        <span>Vyntrax Prep</span>
+                    </div>
+                    <img src="images/india-flag.png" alt="India" class="india-icon" title="India Based">
+                </div>
+                <div class="navbar-right">
+                    <button class="settings-btn" onclick="toggleSettings()">
+                        <i class="fas fa-cog"></i> Settings
+                    </button>
+                    <button class="admin-btn" onclick="redirectToAdmin()">
+                        <i class="fas fa-user-shield"></i> Admin
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-content">
+                <h3>Settings</h3>
+                <div class="theme-toggle">
+                    <label>
+                        <i class="fas fa-moon"></i> Dark Mode
+                        <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <button class="close-settings" onclick="toggleSettings()">Close</button>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Master JEE Exam with Vyntrax Prep</h1>
+                <p>Complete Study Materials, Mock Tests & Conceptual Guidance</p>
+                <p class="subtitle">Organized by NTA | Comprehensive Learning Platform</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="main-content">
+            <div class="subjects-grid">
+                <!-- Mathematics -->
+                <div class="subject-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h2>Mathematics</h2>
+                    <p>Algebra, Calculus, Geometry, Trigonometry & more</p>
+                    <button class="btn btn-primary" onclick="window.location.href='subjects/mathematics.html'">
+                        Explore Math <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Physics -->
+                <div class="subject-card">
+                    <div class="card-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h2>Physics</h2>
+                    <p>Mechanics, Electricity, Optics, Modern Physics & more</p>
+                    <button class="btn btn-primary" onclick="window.location.href='subjects/physics.html'">
+                        Explore Physics <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Chemistry -->
+                <div class="subject-card">
+                    <div class="card-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h2>Chemistry</h2>
+                    <p>Organic, Inorganic, Physical Chemistry & more</p>
+                    <button class="btn btn-primary" onclick="window.location.href='subjects/chemistry.html'">
+                        Explore Chemistry <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mock Test Section -->
+            <section class="mock-test-section">
+                <h2>Full Length Mock Tests</h2>
+                <p>Test your preparation with comprehensive mock exams</p>
+                <button class="btn btn-success btn-large" onclick="window.location.href='mock-test/index.html'">
+                    <i class="fas fa-edit"></i> Start Mock Test
+                </button>
+            </section>
+
+            <!-- Study Map Section -->
+            <section class="study-map-section">
+                <h2>Personalized Study Map</h2>
+                <p>Clear your backlogs with concept-wise sequence learning</p>
+                <button class="btn btn-info btn-large" onclick="window.location.href='study-map/index.html'">
+                    <i class="fas fa-map"></i> View Study Map
+                </button>
+            </section>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Vyntrax Prep</h4>
+                    <p>Your complete JEE exam preparation partner with mock tests, study materials, and expert guidance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/vyntrax.india" target="_blank" title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i> @vyntrax.india
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#subjects">Subjects</a></li>
+                        <li><a href="mock-test/index.html">Mock Tests</a></li>
+                        <li><a href="study-map/index.html">Study Map</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vyntrax Prep - India Based JEE Preparation Platform</p>
+                <img src="images/india-flag.png" alt="India" class="footer-india-icon">
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
