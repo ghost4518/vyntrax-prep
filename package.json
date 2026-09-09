@@ -1,0 +1,29 @@
+{
+  "name": "vyntrax-prep",
+  "version": "1.0.0",
+  "description": "A comprehensive JEE exam preparation platform with mock tests, study materials, and admin dashboard",
+  "author": "Vyntrax Team",
+  "license": "Educational Use",
+  "keywords": [
+    "JEE",
+    "JEE Main",
+    "JEE Advanced",
+    "Exam Preparation",
+    "Mock Tests",
+    "Study Materials",
+    "NTA",
+    "Engineering",
+    "India"
+  ],
+  "homepage": "https://github.com/ghost4518/vyntrax-prep",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghost4518/vyntrax-prep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ghost4518/vyntrax-prep/issues"
+  },
+  "scripts": {
+    "start": "Open index.html in your browser"
+  }
+}
