@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry - Vyntrax Prep</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/subjects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-book"></i>
+                    <span>Vyntrax Prep</span>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <button class="settings-btn" onclick="toggleSettings()"><i class="fas fa-cog"></i> Settings</button>
+                <button class="back-btn" onclick="window.location.href='../index.html'"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-content">
+            <h3>Settings</h3>
+            <div class="theme-toggle">
+                <label>
+                    <i class="fas fa-moon"></i> Dark Mode
+                    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <button class="close-settings" onclick="toggleSettings()">Close</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="subject-hero" style="background: linear-gradient(135deg, #06b6d4, #10b981);">
+            <h1><i class="fas fa-flask"></i> Chemistry</h1>
+            <p>Complete guide to JEE Chemistry with chapters, concepts, and practice questions</p>
+        </section>
+
+        <div class="subject-content">
+            <div class="chapters-list">
+                <h2>Chapters & Concepts</h2>
+                
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Physical Chemistry</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Atomic Structure</h4>
+                            <p><strong>Theory:</strong> Bohr model, quantum numbers, electron configuration, and periodic properties.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('AtomicStructure')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Chemical Bonding</h4>
+                            <p><strong>Theory:</strong> Ionic bonding, covalent bonding, hydrogen bonding, and molecular structure.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('ChemicalBond')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>States of Matter</h4>
+                            <p><strong>Theory:</strong> Gases, liquids, solids, and phase diagrams.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('StatesMatter')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Thermodynamics and Kinetics</h4>
+                            <p><strong>Theory:</strong> Entropy, enthalpy, Gibbs energy, reaction rates, and equilibrium.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('ThermoKinetics')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Solutions and Colligative Properties</h4>
+                            <p><strong>Theory:</strong> Molarity, solubility, vapor pressure, osmotic pressure.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Solutions')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Inorganic Chemistry</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Periodic Table and Properties</h4>
+                            <p><strong>Theory:</strong> Periodic trends, d-block and f-block elements, coordination chemistry.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('PeriodicTable')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Hydrogen and s-block Elements</h4>
+                            <p><strong>Theory:</strong> Hydrogen compounds, alkali metals, alkaline earth metals.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('SBlock')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>p-block Elements</h4>
+                            <p><strong>Theory:</strong> Boron group, carbon group, nitrogen group, oxygen group, halogens, noble gases.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('PBlock')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>d-block and f-block Elements</h4>
+                            <p><strong>Theory:</strong> Transition metals, lanthanides, actinides, and complexes.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('DFBlock')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Organic Chemistry</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Basic Concepts and Nomenclature</h4>
+                            <p><strong>Theory:</strong> IUPAC nomenclature, isomerism, and reaction mechanisms.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('OrgBasic')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Hydrocarbons</h4>
+                            <p><strong>Theory:</strong> Alkanes, alkenes, alkynes, and aromatic compounds.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Hydrocarbons')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Functional Groups</h4>
+                            <p><strong>Theory:</strong> Alcohols, aldehydes, ketones, carboxylic acids, esters, amines.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('FunctionalGroups')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Polymers and Biomolecules</h4>
+                            <p><strong>Theory:</strong> Polymerization, carbohydrates, proteins, nucleic acids.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('Polymers')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter">
+                    <div class="chapter-header" onclick="toggleChapter(this)">
+                        <h3><i class="fas fa-chevron-right"></i> Analytical Chemistry</h3>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="concept">
+                            <h4>Qualitative Analysis</h4>
+                            <p><strong>Theory:</strong> Group analysis, cation and anion identification.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('QualAnalysis')">Practice Questions</button>
+                        </div>
+                        <div class="concept">
+                            <h4>Quantitative Analysis</h4>
+                            <p><strong>Theory:</strong> Titrations, gravimetry, and volumetric analysis.</p>
+                            <button class="btn btn-sm" onclick="showQuestions('QuantAnalysis')">Practice Questions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Vyntrax Prep</h4>
+                <p>Your complete JEE exam preparation partner.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="https://www.instagram.com/vyntrax.india" target="_blank"><i class="fab fa-instagram"></i> @vyntrax.india</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/subjects.js"></script>
+</body>
+</html>
