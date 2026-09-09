@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Vyntrax Prep</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-left">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Admin Dashboard</span>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <button class="settings-btn" onclick="toggleSettings()"><i class="fas fa-cog"></i> Settings</button>
+                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-content">
+            <h3>Settings</h3>
+            <div class="theme-toggle">
+                <label>
+                    <i class="fas fa-moon"></i> Dark Mode
+                    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <button class="close-settings" onclick="toggleSettings()">Close</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="admin-hero">
+            <h1><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
+            <p>Monitor user activities, analytics, and system performance</p>
+        </section>
+
+        <div class="admin-content">
+            <!-- Statistics Section -->
+            <section class="statistics-section">
+                <h2>Quick Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #6366f1;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Total Users</h4>
+                            <p class="stat-number">1,245</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #10b981;">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Tests Completed</h4>
+                            <p class="stat-number">3,892</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #ec4899;">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Active Sessions</h4>
+                            <p class="stat-number">187</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #f59e0b;">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Avg. Daily Visits</h4>
+                            <p class="stat-number">542</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Activity Section -->
+            <section class="user-activity-section">
+                <h2>Recent User Activities</h2>
+                <div class="activity-filters">
+                    <input type="text" placeholder="Search by username or IP..." id="searchInput" onkeyup="filterUsers()">
+                </div>
+                <div class="activity-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>IP Address</th>
+                                <th>Location</th>
+                                <th>Login Time</th>
+                                <th>Activity</th>
+                                <th>Device</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activityTableBody">
+                            <tr>
+                                <td>user_1001</td>
+                                <td>192.168.1.1</td>
+                                <td><i class="fas fa-map-marker-alt"></i> Mumbai, India</td>
+                                <td>2024-09-09 10:30 AM</td>
+                                <td><span class="activity-badge active">Active</span></td>
+                                <td>Chrome (Windows)</td>
+                            </tr>
+                            <tr>
+                                <td>user_1002</td>
+                                <td>203.0.113.45</td>
+                                <td><i class="fas fa-map-marker-alt"></i> Delhi, India</td>
+                                <td>2024-09-09 09:15 AM</td>
+                                <td><span class="activity-badge">Idle</span></td>
+                                <td>Safari (iOS)</td>
+                            </tr>
+                            <tr>
+                                <td>user_1003</td>
+                                <td>198.51.100.89</td>
+                                <td><i class="fas fa-map-marker-alt"></i> Bangalore, India</td>
+                                <td>2024-09-09 08:45 AM</td>
+                                <td><span class="activity-badge">Offline</span></td>
+                                <td>Firefox (Linux)</td>
+                            </tr>
+                            <tr>
+                                <td>user_1004</td>
+                                <td>192.0.2.78</td>
+                                <td><i class="fas fa-map-marker-alt"></i> Pune, India</td>
+                                <td>2024-09-09 07:20 AM</td>
+                                <td><span class="activity-badge">Offline</span></td>
+                                <td>Chrome (Android)</td>
+                            </tr>
+                            <tr>
+                                <td>user_1005</td>
+                                <td>203.0.113.12</td>
+                                <td><i class="fas fa-map-marker-alt"></i> Hyderabad, India</td>
+                                <td>2024-09-09 06:50 AM</td>
+                                <td><span class="activity-badge">Offline</span></td>
+                                <td>Safari (Mac)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Geo-Location Stats -->
+            <section class="geo-section">
+                <h2>User Access by Location</h2>
+                <div class="geo-stats">
+                    <div class="geo-item">
+                        <h4><i class="fas fa-map-marker-alt"></i> Top States</h4>
+                        <ul>
+                            <li>Maharashtra - 245 users</li>
+                            <li>Delhi - 198 users</li>
+                            <li>Karnataka - 187 users</li>
+                            <li>Uttar Pradesh - 156 users</li>
+                            <li>Gujarat - 142 users</li>
+                        </ul>
+                    </div>
+                    <div class="geo-item">
+                        <h4><i class="fas fa-globe"></i> Overall Stats</h4>
+                        <ul>
+                            <li>Total States Covered - 28</li>
+                            <li>Total Cities - 156</li>
+                            <li>Peak Usage Time - 6:00 PM - 9:00 PM</li>
+                            <li>Most Used Device - Mobile</li>
+                            <li>Most Used Browser - Chrome</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IP & Access Logs -->
+            <section class="logs-section">
+                <h2>IP Access Logs</h2>
+                <div class="logs-container">
+                    <div class="log-entry">
+                        <span class="log-time">2024-09-09 10:45 AM</span>
+                        <span class="log-ip">192.168.1.1</span>
+                        <span class="log-action">User Logged In</span>
+                        <span class="log-status success">SUCCESS</span>
+                    </div>
+                    <div class="log-entry">
+                        <span class="log-time">2024-09-09 10:40 AM</span>
+                        <span class="log-ip">203.0.113.45</span>
+                        <span class="log-action">Mock Test Started</span>
+                        <span class="log-status success">SUCCESS</span>
+                    </div>
+                    <div class="log-entry">
+                        <span class="log-time">2024-09-09 10:35 AM</span>
+                        <span class="log-ip">198.51.100.89</span>
+                        <span class="log-action">Study Material Accessed</span>
+                        <span class="log-status success">SUCCESS</span>
+                    </div>
+                    <div class="log-entry">
+                        <span class="log-time">2024-09-09 10:30 AM</span>
+                        <span class="log-ip">192.0.2.78</span>
+                        <span class="log-action">Failed Login Attempt</span>
+                        <span class="log-status error">FAILED</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Admin Panel</h4>
+                <p>Vyntrax Prep - JEE Exam Preparation</p>
+            </div>
+            <div class="footer-section">
+                <h4>Admin Controls</h4>
+                <ul>
+                    <li><a href="#">User Management</a></li>
+                    <li><a href="#">Content Management</a></li>
+                    <li><a href="#">System Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/admin-dashboard.js"></script>
+</body>
+</html>
